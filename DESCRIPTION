@@ -1,0 +1,33 @@
+Package: huncMarkovABD
+Title: Acute Bronchial Disorder Cost-Effectiveness Model
+Version: 0.1.0
+Authors@R: c(
+    person("Ian", "Cromwell",
+           email = "healthyuncertainty@gmail.com",
+           role = c("aut", "cre"))
+  )
+Description: An interactive Markov cohort model for cost-effectiveness analysis
+    of Lunavar+SoC versus SoC alone in patients with Acute Bronchial Disorder
+    (ABD). Implements a 5-state tunnel-state model with 2-week cycles,
+    age-dependent background mortality, probabilistic sensitivity analysis,
+    and an interactive Shiny application. Developed as a fictional illustrative
+    example for the HEPackageR skill validation exercise.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: false
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1.0)
+Imports:
+    stats
+Suggests:
+    shiny,
+    ggplot2,
+    dplyr,
+    DT,
+    scales,
+    dampack,
+    testthat (>= 3.0.0)
+URL: https://github.com/HealthyUncertainty/huncMarkovABD
+BugReports: https://github.com/HealthyUncertainty/huncMarkovABD/issues

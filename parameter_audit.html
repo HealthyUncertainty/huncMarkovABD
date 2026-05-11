@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<title>Parameter Audit: huncMarkovABD</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:1200px;margin:40px auto;padding:0 20px;}
+h1{border-bottom:2px solid #2563eb;padding-bottom:8px;}
+.summary{display:flex;gap:24px;margin:16px 0 24px;}
+.stat{padding:12px 20px;border-radius:8px;font-size:14px;}
+.stat-green{background:#dcfce7;color:#166534;}.stat-red{background:#fee2e2;color:#991b1b;}
+table{border-collapse:collapse;width:100%;font-size:12px;}
+th{background:#1e3a5f;color:white;padding:10px 12px;text-align:left;}
+td{padding:7px 11px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+tr:hover{background:#f8fafc;}code{background:#f1f5f9;padding:2px 5px;border-radius:3px;font-size:11px;}
+small{color:#6b7280;}</style></head><body>
+<h1>Parameter Audit: huncMarkovABD</h1>
+<p>ABD Cost-Effectiveness Model &mdash; Lunavar+SoC vs SoC. Fictional illustrative model.</p>
+<div class="summary">
+<div class="stat stat-green"><strong>14</strong> parameters with reported SE</div>
+<div class="stat stat-red"><strong>4</strong> parameters fixed in PSA</div>
+</div>
+<table><thead><tr><th>Parameter</th><th>Display Name</th><th>Default</th><th>SE</th>
+<th>Category</th><th>Type</th><th>Distribution</th><th>Status / Notes</th>
+</tr></thead><tbody><tr><td><code>aaer_soc</code></td><td>Annual Flare-Up Event Rate (SoC)</td><td style='text-align:right;'>1.65</td><td style='text-align:right;'>0.12245</td><td>Event Rate</td><td>rate</td><td>gamma</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>95% CI 1.42-1.90</small></td></tr>
+<tr><td><code>rr_mild</code></td><td>RR: Mild Flare-Up (Lunavar vs SoC)</td><td style='text-align:right;'>0.45</td><td style='text-align:right;'>0.06122</td><td>Treatment Effects</td><td>multiplier</td><td>lognormal</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>SE on log scale; 95% CI 0.34-0.58</small></td></tr>
+<tr><td><code>rr_moderate</code></td><td>RR: Moderate Flare-Up (Lunavar vs SoC)</td><td style='text-align:right;'>0.25</td><td style='text-align:right;'>0.07398</td><td>Treatment Effects</td><td>multiplier</td><td>lognormal</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>SE on log scale; 95% CI 0.13-0.42</small></td></tr>
+<tr><td><code>rr_severe</code></td><td>RR: Severe Flare-Up (Lunavar vs SoC)</td><td style='text-align:right;'>0.18</td><td style='text-align:right;'>0.06888</td><td>Treatment Effects</td><td>multiplier</td><td>lognormal</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>SE on log scale; 95% CI 0.08-0.35</small></td></tr>
+<tr><td><code>prop_mild</code></td><td>Proportion: Mild Flare-Ups</td><td style='text-align:right;'>0.72</td><td style='text-align:right;'>0.01</td><td>Flare-Up Mix</td><td>probability</td><td>beta</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>Beta; SE=0.01</small></td></tr>
+<tr><td><code>prop_moderate</code></td><td>Proportion: Moderate Flare-Ups</td><td style='text-align:right;'>0.12</td><td style='text-align:right;'>0.01</td><td>Flare-Up Mix</td><td>probability</td><td>beta</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>Beta; SE=0.01</small></td></tr>
+<tr><td><code>prop_severe</code></td><td>Proportion: Severe Flare-Ups</td><td style='text-align:right;'>0.16</td><td style='text-align:right;'>0.01</td><td>Flare-Up Mix</td><td>probability</td><td>beta</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>Beta; SE=0.01</small></td></tr>
+<tr><td><code>prob_death_severe_flare</code></td><td>Prob: Death During Severe Flare-Up</td><td style='text-align:right;'>0.0055</td><td style='text-align:right;'>0.001</td><td>Mortality</td><td>probability</td><td>beta</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>Beta; SE=0.001</small></td></tr>
+<tr><td><code>utility_stable_lunavar</code></td><td>Utility: Stable (Lunavar+SoC)</td><td style='text-align:right;'>0.805</td><td style='text-align:right;'>0.00765</td><td>Utilities</td><td>utility</td><td>utility</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>1 - Gamma method; 95% CI 0.790-0.820</small></td></tr>
+<tr><td><code>utility_stable_soc</code></td><td>Utility: Stable (SoC)</td><td style='text-align:right;'>0.76</td><td style='text-align:right;'>0.01</td><td>Utilities</td><td>utility</td><td>utility</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>1 - Gamma method; SE=0.01</small></td></tr>
+<tr><td><code>disutility_mild</code></td><td>Disutility: Mild Flare-Up</td><td style='text-align:right;'>0.08</td><td style='text-align:right;'>&mdash;</td><td>Utilities</td><td>other</td><td>fixed</td><td><span style="color:#dc2626;">&#9679; Fixed</span><br><small>Fixed in PSA</small></td></tr>
+<tr><td><code>disutility_moderate</code></td><td>Disutility: Moderate Flare-Up</td><td style='text-align:right;'>0.14</td><td style='text-align:right;'>&mdash;</td><td>Utilities</td><td>other</td><td>fixed</td><td><span style="color:#dc2626;">&#9679; Fixed</span><br><small>Fixed in PSA</small></td></tr>
+<tr><td><code>disutility_severe</code></td><td>Disutility: Severe Flare-Up</td><td style='text-align:right;'>0.22</td><td style='text-align:right;'>&mdash;</td><td>Utilities</td><td>other</td><td>fixed</td><td><span style="color:#dc2626;">&#9679; Fixed</span><br><small>Fixed in PSA</small></td></tr>
+<tr><td><code>cost_drug_lunavar_annual</code></td><td>Drug Cost: Lunavar (annual, CAD)</td><td style='text-align:right;'>4,800</td><td style='text-align:right;'>960</td><td>Costs - Drug</td><td>cost</td><td>gamma</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>20% relative SE</small></td></tr>
+<tr><td><code>cost_drug_soc_annual</code></td><td>Drug Cost: SoC (annual, CAD)</td><td style='text-align:right;'>5,200</td><td style='text-align:right;'>&mdash;</td><td>Costs - Drug</td><td>cost</td><td>fixed</td><td><span style="color:#dc2626;">&#9679; Fixed</span><br><small>Fixed in PSA</small></td></tr>
+<tr><td><code>cost_mild_event</code></td><td>Cost: Mild Flare-Up Event (CAD)</td><td style='text-align:right;'>1,350</td><td style='text-align:right;'>280.6122</td><td>Costs - Event</td><td>cost</td><td>gamma</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>95% CI 850-1950</small></td></tr>
+<tr><td><code>cost_moderate_event</code></td><td>Cost: Moderate Flare-Up Event (CAD)</td><td style='text-align:right;'>1,850</td><td style='text-align:right;'>357.1429</td><td>Costs - Event</td><td>cost</td><td>gamma</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>95% CI 1200-2600</small></td></tr>
+<tr><td><code>cost_severe_event</code></td><td>Cost: Severe Flare-Up Event (CAD)</td><td style='text-align:right;'>8,200</td><td style='text-align:right;'>1530.612</td><td>Costs - Event</td><td>cost</td><td>gamma</td><td><span style="color:#16a34a;">&#9679; Reported</span><br><small>95% CI 5500-11500</small></td></tr></tbody></table>
+<hr><p style="font-size:12px;color:#9ca3af;">Generated 2026-05-10 20:07 &bull; huncMarkovABD v0.1.0</p>
+</body></html>
