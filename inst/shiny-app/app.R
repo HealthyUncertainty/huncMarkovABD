@@ -1,3 +1,10 @@
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+
+if (!requireNamespace("huncMarkovABD", quietly = TRUE)) {
+  remotes::install_github("HealthyUncertainty/huncMarkovABD")
+}
+library(huncMarkovABD)
+
 # CAIS Cost-Effectiveness Model - Shiny App
 # Launch with: huncMarkovABD::launch_app()
 library(shiny)
